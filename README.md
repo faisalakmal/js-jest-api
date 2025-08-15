@@ -14,3 +14,18 @@ This project is an API automation testing framework built with JavaScript, utili
 - Supertest – Library untuk testing HTTP endpoint.
 
 # 📁 Directory Structure
+```
+├── .env.example
+├── .gitignore
+├── README.md
+├── jest.config.js
+├── package-lock.json
+├── package.json
+└── src
+    ├── config
+        └── index.js
+    ├── helpers
+        └── request.js
+    └── tests
+        └── sample.test.js
+```
