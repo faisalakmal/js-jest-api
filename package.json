@@ -1,0 +1,24 @@
+{
+  "name": "js-jest-api",
+  "version": "1.0.0",
+  "description": "automation API",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:development": "cross-env NODE_ENV=development jest --runInBand",
+    "test:staging": "cross-env GOREST_BASE_URL=https://gorest.co.in/public/v2 jest --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1",
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4"
+  },
+  "dependencies": {
+    "jest": "^30.0.5"
+  }
+}
