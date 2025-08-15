@@ -1,4 +1,3 @@
-// tests/helpers/request.js
 const supertest = require('supertest');
 
 class RequestHelper {

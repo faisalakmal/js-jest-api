@@ -1,11 +1,10 @@
-require("dotenv").config();
-const RequestHelper = require("../helpers/request");
+// require("dotenv").config();
+const RequestHelper = require("../helpers/RequestHelper");
 
 describe("Pengujian API GoRest - Users", () => {
   let requestGoRest, requestReqres;
 
   beforeAll(() => {
-    // Buat instance helper dengan baseUrl dari .env
     requestGoRest = new RequestHelper(process.env.BASE_URL_GOREST, {
       Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
     });
@@ -15,7 +14,7 @@ describe("Pengujian API GoRest - Users", () => {
     });
   });
 
-  test("GET /users - Mengambil daftar user", async () => {
+  it("GET /users - Mengambil daftar user", async () => {
     const res = await requestGoRest
       .get("/users", {
         query: { page: 1, per_page: 3 },
@@ -25,12 +24,13 @@ describe("Pengujian API GoRest - Users", () => {
     expect(res.body.length).toBeGreaterThan(0);
   });
 
-  test("POST /login - Login", async () => {
+  it("POST /login - Login", async () => {
     const res = await requestReqres
       .post("/api/login", {
         username: "eve.holt@reqres.in",
         password: "pistol",
       })
       .expect(200);
+    expect(res.body).toHaveProperty("token");
   });
 });
